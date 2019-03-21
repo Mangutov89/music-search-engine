@@ -56,8 +56,11 @@ $(document).ready(function() {
       })
       .then(function(response) {
         let eventResponse = JSON.parse(response);
+        console.log(eventResponse);
         let newArtistName = eventResponse._embedded.events[0].name;
+        let weezerImage = eventResponse._embedded.events[0].images[0].url;
         $("#new-event-response").text(newArtistName);
+        $("#results-pic").html(`here is a picture <img src="${weezerImage}">`)
       })
 
 
